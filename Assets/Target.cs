@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour {
-
     float time;
     int count;
+
+    bool playedGameOverSfx;
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI countText;
@@ -15,6 +16,7 @@ public class Target : MonoBehaviour {
 
     public AudioSource audioSource;
     public AudioClip burhSfx;
+    public AudioClip gameoverSfx;
 
     private SpriteRenderer rend;
 
@@ -22,6 +24,8 @@ public class Target : MonoBehaviour {
         time = 11f;
 
         count = 0;
+
+        playedGameOverSfx = false;
 
         gameOverText.text = "";
         gameOverText2.text = "";
@@ -47,6 +51,12 @@ public class Target : MonoBehaviour {
             gameOverText2.text = "ENTER TO RESTART";
 
             finalPointsText.text = count.ToString();
+
+            if (!playedGameOverSfx) {
+                audioSource.PlayOneShot(gameoverSfx);
+                playedGameOverSfx = true;
+            }
+
 
             if (Input.GetKeyDown(KeyCode.Return)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

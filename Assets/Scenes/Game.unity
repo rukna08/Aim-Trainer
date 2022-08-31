@@ -884,6 +884,7 @@ MonoBehaviour:
   finalPointsText: {fileID: 1378260078}
   audioSource: {fileID: 1221936502}
   burhSfx: {fileID: 8300000, guid: 3075238198c538d4986b783cfeed07c5, type: 3}
+  gameoverSfx: {fileID: 8300000, guid: 61bceb74af8a8f04daa7848685ec4919, type: 3}
 --- !u!58 &1586112251
 CircleCollider2D:
   m_ObjectHideFlags: 0
