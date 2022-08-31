@@ -13,7 +13,7 @@ public class Target : MonoBehaviour {
     public TextMeshProUGUI gameOverText2;
     public TextMeshProUGUI finalPointsText;
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer rend;
 
     void Start() {
         time = 11f;
@@ -24,7 +24,7 @@ public class Target : MonoBehaviour {
         gameOverText2.text = "";
         finalPointsText.text = "";
 
-        renderer = GetComponent<SpriteRenderer>();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
@@ -36,7 +36,7 @@ public class Target : MonoBehaviour {
         }
 
         if (time <= 0) {
-            renderer.enabled = false;
+            rend.enabled = false;
 
             Camera.main.backgroundColor = Color.blue;
 
