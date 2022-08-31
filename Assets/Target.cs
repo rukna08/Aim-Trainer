@@ -13,6 +13,9 @@ public class Target : MonoBehaviour {
     public TextMeshProUGUI gameOverText2;
     public TextMeshProUGUI finalPointsText;
 
+    public AudioSource audioSource;
+    public AudioClip burhSfx;
+
     private SpriteRenderer rend;
 
     void Start() {
@@ -53,6 +56,11 @@ public class Target : MonoBehaviour {
 
     private void OnMouseDown() {
         if (time >= 0) {
+            
+            if (audioSource != null) {
+                audioSource.PlayOneShot(burhSfx);
+            }
+
             count++;
             transform.position = new Vector2(Random.Range(-8.0f, 8.0f), Random.Range(-4f, 4f));
         }
